@@ -1,0 +1,14 @@
+.ui-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-border);
+}
+
+.ui-progress__value {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-mustard);
+  transition: width 200ms ease;
+}

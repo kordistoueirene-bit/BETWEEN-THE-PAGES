@@ -1,0 +1,96 @@
+.welcome-screen {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 38px 28px 42px;
+  background: var(--color-welcome-background);
+  color: var(--color-welcome-foreground);
+  text-align: center;
+}
+
+.welcome-illustration {
+  display: grid;
+  width: min(100%, 300px);
+  min-height: 0;
+  flex: 1;
+  align-items: center;
+}
+
+.welcome-illustration svg {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  overflow: visible;
+}
+
+.welcome-copy {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.welcome-eyebrow {
+  margin: 0 0 10px;
+  color: var(--color-welcome-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.welcome-copy h1 {
+  max-width: 330px;
+  margin: 0 auto;
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.welcome-copy h1 em {
+  color: var(--color-welcome-accent);
+  font-weight: 400;
+}
+
+.welcome-tagline {
+  max-width: 270px;
+  margin: 15px auto 24px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.welcome-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.welcome-start-over {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--color-welcome-foreground);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.welcome-start-over:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--color-welcome-foreground);
+  outline-offset: 2px;
+}
+
+@media (max-height: 680px) {
+  .welcome-screen {
+    padding-block: 20px 24px;
+  }
+
+  .welcome-illustration svg {
+    max-height: 250px;
+  }
+}

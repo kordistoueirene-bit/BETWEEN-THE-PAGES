@@ -1,0 +1,26 @@
+.ui-chip {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.ui-chip:hover,
+.ui-chip--selected {
+  border-color: var(--color-mustard);
+  background: var(--color-soft-mustard);
+}
+
+.ui-chip:focus-visible {
+  outline: 3px solid var(--color-sage-text);
+  outline-offset: 2px;
+}

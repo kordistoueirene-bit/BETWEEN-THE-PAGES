@@ -1,0 +1,162 @@
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--color-ink);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-background: #FBF6EC;
+  --color-surface: #FFFCF6;
+  --color-mustard: #F2C46D;
+  --color-soft-mustard: #FBE7BE;
+  --color-dusty-pink: #E8A5A0;
+  --color-sage: #7FB7A8;
+  --color-ink: #2E3440;
+  --color-on-ink: #FBF6EC;
+  --color-ink-hover: #414958;
+  --color-muted: #717780;
+  --color-sage-text: #397466;
+  --color-border: #ECE3D3;
+  --color-danger: #A94343;
+  --color-danger-soft: color-mix(in srgb, var(--color-danger) 12%, transparent);
+  --color-tour-scrim: rgb(46 52 64 / 55%);
+  --color-welcome-background: var(--color-mustard);
+  --color-welcome-foreground: #2E3440;
+  --color-welcome-muted: rgb(46 52 64 / 68%);
+  --color-welcome-accent: #704D42;
+  --color-award-tint: #A887ED;
+  --color-overlay: rgb(46 52 64 / 38%);
+  --color-veil: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --radius-small: 12px;
+  --radius-medium: 20px;
+  --radius-large: 28px;
+  --shadow-soft: 0 4px 16px rgb(46 52 64 / 7%);
+  --shadow-frame: 0 20px 60px rgb(46 52 64 / 16%);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --color-background: #1E2128;
+  --color-surface: #2A2E37;
+  --color-mustard: #F2C46D;
+  --color-soft-mustard: #49402E;
+  --color-dusty-pink: #E8A5A0;
+  --color-sage: #7FB7A8;
+  --color-ink: #F3EFE6;
+  --color-on-ink: #1E2128;
+  --color-ink-hover: #DED8CC;
+  --color-muted: #B5BAC3;
+  --color-sage-text: #A9D9CB;
+  --color-border: #414650;
+  --color-danger: #F08B8B;
+  --color-danger-soft: color-mix(in srgb, var(--color-danger) 16%, transparent);
+  --color-tour-scrim: rgb(0 0 0 / 68%);
+  --color-welcome-background: var(--color-background);
+  --color-welcome-foreground: var(--color-ink);
+  --color-welcome-muted: var(--color-muted);
+  --color-welcome-accent: var(--color-dusty-pink);
+  --color-award-tint: #C0A2FF;
+  --color-overlay: rgb(0 0 0 / 52%);
+  --color-veil: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  --shadow-soft: 0 4px 16px rgb(0 0 0 / 18%);
+  --shadow-frame: 0 20px 60px rgb(0 0 0 / 32%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  display: grid;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  place-items: center;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'DM Sans', sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  color: inherit;
+}
+
+.app-layout > :first-child {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  padding-bottom: 84px;
+  scrollbar-width: thin;
+  animation: route-enter 200ms ease both;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-sage-text);
+  outline-offset: 2px;
+}
+
+button:active,
+a:active,
+[role='button']:active {
+  transform: scale(0.98);
+}
+
+@keyframes route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 500px) {
+  body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 24px;
+  }
+}

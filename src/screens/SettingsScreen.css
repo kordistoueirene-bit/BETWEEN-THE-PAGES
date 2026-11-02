@@ -1,0 +1,106 @@
+.settings-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 14px 28px;
+  background: var(--color-background);
+}
+
+.settings-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.settings-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.settings-card p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.settings-card--danger {
+  border-color: color-mix(in srgb, var(--color-danger) 22%, transparent);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.settings-row--stacked {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.settings-row p {
+  margin-top: 4px;
+}
+
+.settings-switch {
+  position: relative;
+  width: 54px;
+  min-height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-muted) 25%, transparent);
+  cursor: pointer;
+}
+
+.settings-switch span {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  transition: transform 180ms ease;
+}
+
+.settings-switch.is-on {
+  background: var(--color-sage);
+}
+
+.settings-switch.is-on span {
+  transform: translateX(24px);
+}
+
+.settings-inline-button {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  font: inherit;
+}
+
+.settings-row select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-background);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.settings-danger-button {
+  width: 100%;
+  border-color: color-mix(in srgb, var(--color-danger) 30%, transparent);
+  color: var(--color-danger);
+}

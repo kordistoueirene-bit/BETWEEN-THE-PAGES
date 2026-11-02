@@ -1,0 +1,273 @@
+.book-cover {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--cover-bg);
+  color: var(--cover-fg);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.book-cover::before,
+.book-cover::after,
+.book-cover__art {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.book-cover__title,
+.book-cover__author {
+  position: relative;
+  z-index: 1;
+  overflow-wrap: anywhere;
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--cover-bg) 35%, transparent);
+}
+
+.book-cover__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  line-height: 1.08;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.book-cover__author {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.55rem;
+  line-height: 1.15;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.book-cover--sm {
+  width: 90px;
+  height: 135px;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.book-cover--sm .book-cover__title {
+  font-size: 0.72rem;
+}
+
+.book-cover--sm .book-cover__author {
+  font-size: 0.5rem;
+}
+
+.book-cover--md {
+  width: 120px;
+  height: 180px;
+  border-radius: 20px;
+  padding: 11px;
+}
+
+.book-cover--lg {
+  width: 160px;
+  height: 240px;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.book-cover--lg .book-cover__title {
+  font-size: 1.15rem;
+}
+
+.book-cover--lg .book-cover__author {
+  font-size: 0.7rem;
+}
+
+.book-cover--poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 28px;
+  padding: 24px;
+}
+
+.book-cover--poster .book-cover__title {
+  font-size: 2rem;
+}
+
+.book-cover--poster .book-cover__author {
+  font-size: 0.9rem;
+}
+
+.book-cover--stripes .book-cover__art {
+  inset: -20%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0 11px,
+    color-mix(in srgb, var(--cover-accent) 76%, transparent) 11px 19px
+  );
+  transform: rotate(-8deg);
+}
+
+.book-cover--blocks::before,
+.book-cover--blocks::after {
+  content: '';
+  background: color-mix(in srgb, var(--cover-accent) 88%, transparent);
+}
+
+.book-cover--blocks::before {
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 38%;
+}
+
+.book-cover--blocks::after {
+  top: 30%;
+  left: 0;
+  width: 34%;
+  height: 25%;
+}
+
+.book-cover--circles .book-cover__art {
+  inset: 0;
+  background:
+    radial-gradient(circle at 77% 23%, var(--cover-accent) 0 18%, transparent 18.5%),
+    radial-gradient(circle at 28% 47%, color-mix(in srgb, var(--cover-accent) 60%, transparent) 0 26%, transparent 26.5%);
+}
+
+.book-cover--waves::before,
+.book-cover--waves::after {
+  content: '';
+  width: 130%;
+  height: 65%;
+  border-radius: 50%;
+  background: var(--cover-accent);
+}
+
+.book-cover--waves::before {
+  right: -42%;
+  bottom: 25%;
+  opacity: 0.82;
+  transform: rotate(-25deg);
+}
+
+.book-cover--waves::after {
+  bottom: -38%;
+  left: -40%;
+  opacity: 0.58;
+  transform: rotate(20deg);
+}
+
+.book-cover--grid .book-cover__art {
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--cover-accent) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cover-accent) 70%, transparent) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.8;
+}
+
+.book-cover--arches::before,
+.book-cover--arches::after {
+  content: '';
+  border: 7px solid color-mix(in srgb, var(--cover-accent) 88%, transparent);
+  border-bottom: 0;
+  border-radius: 100px 100px 0 0;
+}
+
+.book-cover--arches::before {
+  inset: 12% 12% 5%;
+}
+
+.book-cover--arches::after {
+  inset: 26% 27% 5%;
+  opacity: 0.68;
+}
+
+.book-cover--dots .book-cover__art {
+  inset: 0;
+  background-image: radial-gradient(var(--cover-accent) 1.5px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.75;
+}
+
+.book-cover--diamond .book-cover__art {
+  inset: -20%;
+  background: repeating-linear-gradient(45deg, transparent 0 12px, color-mix(in srgb, var(--cover-accent) 78%, transparent) 12px 14px);
+  transform: rotate(45deg);
+}
+
+.book-cover--vertical .book-cover__art {
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 12px, color-mix(in srgb, var(--cover-accent) 72%, transparent) 12px 18px);
+}
+
+.book-cover--concentric .book-cover__art {
+  inset: 12% 10% 24%;
+  border: 2px solid var(--cover-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--cover-accent) 48%, transparent), 0 0 0 16px color-mix(in srgb, var(--cover-accent) 24%, transparent);
+}
+
+.book-cover--checker .book-cover__art {
+  inset: 0;
+  background-image: linear-gradient(45deg, var(--cover-accent) 25%, transparent 25%, transparent 75%, var(--cover-accent) 75%), linear-gradient(45deg, var(--cover-accent) 25%, transparent 25%, transparent 75%, var(--cover-accent) 75%);
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+  opacity: 0.38;
+}
+
+.book-cover--sunburst .book-cover__art {
+  inset: 0;
+  background: repeating-conic-gradient(from 0deg at 50% 34%, color-mix(in srgb, var(--cover-accent) 58%, transparent) 0deg 8deg, transparent 8deg 18deg);
+}
+
+.book-cover--speckle .book-cover__art {
+  inset: 0;
+  background-image: radial-gradient(circle, var(--cover-accent) 1px, transparent 1.5px), radial-gradient(circle, color-mix(in srgb, var(--cover-accent) 55%, transparent) 1px, transparent 1.5px);
+  background-position: 0 0, 7px 9px;
+  background-size: 17px 19px;
+  opacity: 0.8;
+}
+
+.book-cover--ribbons::before,
+.book-cover--ribbons::after {
+  content: '';
+  width: 145%;
+  height: 24%;
+  background: color-mix(in srgb, var(--cover-accent) 76%, transparent);
+  transform: rotate(-32deg);
+}
+
+.book-cover--ribbons::before {
+  top: 18%;
+  left: -20%;
+}
+
+.book-cover--ribbons::after {
+  top: 48%;
+  left: -25%;
+  opacity: 0.55;
+}
+
+.book-cover--frame::before,
+.book-cover--frame::after {
+  content: '';
+  border: 2px solid color-mix(in srgb, var(--cover-accent) 82%, transparent);
+}
+
+.book-cover--frame::before {
+  inset: 9%;
+}
+
+.book-cover--frame::after {
+  inset: 15%;
+  opacity: 0.6;
+}
+
+.book-cover--split .book-cover__art {
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0 49.5%, color-mix(in srgb, var(--cover-accent) 84%, transparent) 50% 100%);
+}
